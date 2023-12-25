@@ -8,5 +8,5 @@
 ## Installation
 
 ```
-Install-Package Soenneker.Dtos.IdPartitionPair
+dotnet add package Soenneker.Dtos.IdPartitionPair
 ```
