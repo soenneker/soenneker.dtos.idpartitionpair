@@ -20,7 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\src\Soenneker.Dtos.IdPartitionPair.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Dtos.IdPartitionPair.csproj" />
     </ItemGroup>
 
 </Project>
