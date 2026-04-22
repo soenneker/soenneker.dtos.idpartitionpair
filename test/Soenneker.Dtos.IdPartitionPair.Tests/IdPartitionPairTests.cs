@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Dtos.IdPartitionPair.Tests;
 
-[Collection("Collection")]
-public class IdPartitionPairTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class IdPartitionPairTests : HostedUnitTest
 {
-    public IdPartitionPairTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public IdPartitionPairTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
