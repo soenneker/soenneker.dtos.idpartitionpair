@@ -11,10 +11,16 @@ namespace Soenneker.Dtos.IdPartitionPair;
 [PublicOpenApiObject]
 public record IdPartitionPair
 {
+    /// <summary>
+    /// Gets or sets id.
+    /// </summary>
     [JsonPropertyName("id")]
     [JsonProperty("id")]
     public required string Id { get; set; } = null!;
 
+    /// <summary>
+    /// Gets or sets partition key.
+    /// </summary>
     [JsonPropertyName("partitionKey")]
     [JsonProperty("partitionKey")]
     public required string PartitionKey { get; set; } = null!;
