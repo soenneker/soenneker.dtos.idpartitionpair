@@ -5,21 +5,20 @@ using Soenneker.Attributes.PublicOpenApiObject;
 namespace Soenneker.Dtos.IdPartitionPair;
 
 /// <summary>
-/// A minimal Record type with an Id (string), PartitionKey (string), and maximum JSON compatibility. <para/>
-/// Properties are non-nullable. Lowercase properties when (de)serialized.
+/// Identifies a partitioned record by its resource identifier and partition key.
 /// </summary>
 [PublicOpenApiObject]
 public record IdPartitionPair
 {
     /// <summary>
-    /// Gets or sets id.
+    /// Stable identifier of the record within its partition.
     /// </summary>
     [JsonPropertyName("id")]
     [JsonProperty("id")]
     public required string Id { get; set; } = null!;
 
     /// <summary>
-    /// Gets or sets partition key.
+    /// Partition key used to locate and route the record in the backing data store.
     /// </summary>
     [JsonPropertyName("partitionKey")]
     [JsonProperty("partitionKey")]
