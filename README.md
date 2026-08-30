@@ -5,7 +5,7 @@
 
 # Soenneker.Dtos.IdPartitionPair
 
-Identifies a partitioned record by its resource identifier and partition key.
+A two-field DTO for addressing a record in a partitioned data store. Both fields are required, and the JSON shape is identical with `System.Text.Json` and Newtonsoft.Json.
 
 ## Install
 
@@ -13,13 +13,25 @@ Identifies a partitioned record by its resource identifier and partition key.
 dotnet add package Soenneker.Dtos.IdPartitionPair
 ```
 
-## What you get
+## Usage
 
-- `IdPartitionPair` — Identifies a partitioned record by its resource identifier and partition key.
+```csharp
+using Soenneker.Dtos.IdPartitionPair;
 
-## API at a glance
+var address = new IdPartitionPair
+{
+    Id = "order-1042",
+    PartitionKey = "customer-87"
+};
+```
 
-| API | What it does | Result / important behavior |
-| --- | --- | --- |
-| `IdPartitionPair.Id` | Stable identifier of the record within its partition. | Stable identifier of the record within its partition. |
-| `IdPartitionPair.PartitionKey` | Partition key used to locate and route the record in the backing data store. | Partition key used to locate and route the record in the backing data store. |
+It serializes as:
+
+```json
+{
+  "id": "order-1042",
+  "partitionKey": "customer-87"
+}
+```
+
+The type does not impose a partition-key convention or validate that the pair exists. Pass the exact values expected by the backing store.
