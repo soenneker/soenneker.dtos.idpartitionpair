@@ -5,7 +5,7 @@
 
 # Soenneker.Dtos.IdPartitionPair
 
-A two-field DTO for addressing a record in a partitioned data store. Both fields are required, and the JSON shape is identical with `System.Text.Json` and Newtonsoft.Json.
+A two-field DTO for addressing a record in a partitioned data store. Both fields are required, and the JSON shape is identical with `System.Text.Json`.
 
 ## Install
 
